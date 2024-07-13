@@ -10,7 +10,7 @@ import Experience from '@/components/Custom/Experience'
 
 function Page() {
   return (
-    <div className='overflow-hidden bg-[#989D9F] cursor-none'>
+    <div className='overflow-hidden bg-[#989D9F]'>
      <Navbar background={'bg-[#989D9F] text-white'}/>
       <Hero/>
       <About/>
