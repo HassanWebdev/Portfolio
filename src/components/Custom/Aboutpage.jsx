@@ -62,7 +62,7 @@ function Page() {
     <>
       {" "}
       <Navbar background={"bg-white text-gray-600"} />
-      <div className="w-full h-auto px-5 md:px-10 ">
+      <div className="w-full h-auto px-5 md:px-10   cursor-none">
         <div
           id="mouse"
           className={`w-5 h-5 bg-black fixed top-0  left-0 z-[99] rounded-full pointer-events-none `}
