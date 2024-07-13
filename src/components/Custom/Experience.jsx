@@ -10,10 +10,10 @@ function Experience() {
   const experienceTimeline = [
     {
       year: 2024,
-      role: "Senior React.js Developer",
+      role: "Senior MERN Developer",
       company: "Rev9-Solution",
       achievements: "Implementing advanced React patterns",
-      technologies: ["React.js", "Redux", "TypeScript", "Next.js"],
+      technologies: ["React.js",  "Next.js",'redux',"TypeScript",],
     },
     {
       year: 2022,
@@ -63,7 +63,6 @@ function Experience() {
         if (window.innerWidth >= 768) return 0;
         return '100%';
       },
-      opacity: 0,
       duration: 1,
       ease: 'power4.out',
       stagger: 0.4

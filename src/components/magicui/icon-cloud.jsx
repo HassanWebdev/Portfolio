@@ -1,24 +1,9 @@
 "use client";
-
 import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
-import {
-  Cloud,
-  fetchSimpleIcons,
-  ICloud,
-  renderSimpleIcon,
-  SimpleIcon,
-} from "react-icon-cloud";
+import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 
-export const cloudProps: Omit<ICloud, "children"> = {
-  containerProps: {
-    style: {
-      display: "flex",
-      justifyContent: "end",
-      alignItems: "center",
-      width: "100%",
-    },
-  },
+export const cloudProps = {
   options: {
     reverse: true,
     depth: 1,
@@ -36,7 +21,7 @@ export const cloudProps: Omit<ICloud, "children"> = {
   },
 };
 
-export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
+export const renderCustomIcon = (icon, theme) => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
   const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
   const minContrastRatio = theme === "dark" ? 2 : 1.2;
@@ -51,19 +36,13 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
       href: undefined,
       target: undefined,
       rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e) => e.preventDefault(),
     },
   });
 };
 
-export type DynamicCloudProps = {
-  iconSlugs: string[];
-};
-
-type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
-
-export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
-  const [data, setData] = useState<IconData | null>(null);
+export default function IconCloud({ iconSlugs }) {
+  const [data, setData] = useState(null);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -74,14 +53,15 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light"),
+      renderCustomIcon(icon, theme || "light")
     );
   }, [data, theme]);
 
   return (
-    // @ts-ignore
     <Cloud {...cloudProps}>
-      <>{renderedIcons}</>
+      <>
+        {renderedIcons}
+      </>
     </Cloud>
   );
 }

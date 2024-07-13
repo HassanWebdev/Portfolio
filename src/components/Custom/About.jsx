@@ -12,8 +12,8 @@ export default function MeteorDemo() {
     const animate = gsap.timeline({
       scrollTrigger: {
         trigger: "#main",
-        start: "top 65%", // Adjust as needed
-        end: "bottom bottom", // Adjust as needed
+        start: "top 65%", 
+        end: "bottom bottom", 
         scrub:2
       },
     });
@@ -29,9 +29,9 @@ export default function MeteorDemo() {
         duration: 1.1,
         delay:.5,
         ease: 'power4.out'
-      }, "<"); // This makes the right animation start at the same time as the left
+      }, "<"); 
   
-  }, []); // Empty dependency array to run only once on component mount
+  }, []);
 
   const words = [
     {

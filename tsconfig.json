@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/docs/[[...slug]]/page.jsx", "src/app/(auth)/Register/page.jsx", "src/lib/modal/User.js", "tailwind.config.ts", "src/lib/dbConnect.js", "src/lib/Userschema.ts", "src/components/Custom/Navbar.jsx", "src/app/page.tsx", "src/components/Custom/About.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/docs/[[...slug]]/page.jsx", "src/app/(auth)/Register/page.jsx", "src/lib/modal/User.js", "tailwind.config.ts", "src/lib/dbConnect.js", "src/lib/Userschema.ts", "src/components/Custom/Navbar.jsx", "src/app/page.tsx", "src/components/Custom/About.jsx", "src/components/magicui/icon-cloud.jsx"],
   "exclude": ["node_modules"]
 }

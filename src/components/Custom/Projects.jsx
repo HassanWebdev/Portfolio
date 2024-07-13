@@ -145,7 +145,7 @@ function Projects() {
                   <BorderBeam size={200} duration={3} delay={2} borderWidth={2} colorFrom="#D448EE" colorTo="#19ADD7" />
                 </a>
               );
-            })}
+            })}       
           </div>
         ) : (
           projects.map((item, index) => {

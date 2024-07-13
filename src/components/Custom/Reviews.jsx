@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React from "react";
 import Marquee from "react-fast-marquee";
@@ -107,7 +106,7 @@ const ReviewCard = ({ review }) => (
 
 const ReviewMarquee = () => {
   return (
-    <div className="w-screen h-screen bg-white px-10 flex flex-col gap-10">
+    <div className="w-screen  bg-white md:px-10 px-5 flex flex-col gap-10 pt-5">
       <h1 className="font-neue_montreal text-3xl tracking-wide opacity-85 uppercase">Reviews</h1>
       <Box sx={{ mt: 0 }}>
         <Marquee gradient={false} speed={40} pauseOnHover={true} className="hover:cursor-pointer">

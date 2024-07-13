@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { AnimatedTooltip } from "../ui/animated-tooltip";
 import img from "@/app/img/asli4.png";
-
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger)
 function getCurrentTimePST() {
   const now = new Date();
   const options = {
@@ -32,23 +34,44 @@ function About() {
       image: img,
     },
   ];
+  useGSAP(()=>{
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".foot",
+        start: "top 65%", 
+        end: "bottom bottom", 
+      },
+    })
+    tl.from('.fot',{
+      y: 200,
+      duration: 1,
+      ease: "power2.Out",
+      stagger:.3,
+    })
+    tl.from('.btn',{
+      scale:0,
+      duration: 1,
+      ease: "elastic.out",
+      stagger:.3,
+    })
+  })
   return (
-    <div className="w-full  bg-[#1D1D21] px-5  py-5">
+    <div className="w-full foot  bg-[#1D1D21] px-5  py-5">
       <div className="w-full  pt-36 flex flex-col gap-20 md:px-32">
         <div className="flex justify-between items-center w-full">
           <div id="text " className="text-white">
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 overflow-hidden">
               <Image
-                className="rounded-full md:h-20 md:w-20 h-16 w-16 border-2 bg-[#989D9F] grayscale-[70%]"
+                className="fot rounded-full md:h-20 md:w-20 h-16 w-16 border-2 bg-[#989D9F] grayscale-[70%]"
                 src={person[0].image}
                 alt={person[0].name}
               />
-              <h1 className="font-neue_montreal_Medium text-4xl md:text-8xl leading-none ">
+              <h1 className="fot font-neue_montreal_Medium text-4xl md:text-8xl leading-none ">
                 Let’s work
               </h1>
             </div>
-            <div>
-              <h1 className="font-neue_montreal_Medium text-4xl md:text-8xl leading-none">
+            <div className="overflow-hidden">
+              <h1 className="fot font-neue_montreal_Medium text-4xl md:text-8xl leading-none">
                 together
               </h1>
             </div>
@@ -81,13 +104,13 @@ function About() {
         <hr />
       </div>
       <div className="md:px-32 py-10 flex flex-col md:flex-row gap-5">
-        <button className="relative overflow-hidden font-neue_montreal tracking-wider px-4 py-5 rounded-full text-white border border-gray-200 group">
+        <button className="btn relative overflow-hidden font-neue_montreal tracking-wider px-4 py-5 rounded-full text-white border border-gray-200 group">
           <span className="relative z-10 group-hover:text-black transition-colors duration-300">
             hassanwebdev0896@gmail.com
           </span>
           <span className="absolute inset-0 bg-white transform scale-y-0 origin-top group-hover:scale-y-100 transition-transform duration-300 ease-out"></span>
         </button>
-        <button className="relative overflow-hidden font-neue_montreal tracking-wider px-4 py-5 rounded-full text-white border border-gray-200 group">
+        <button className="btn relative overflow-hidden font-neue_montreal tracking-wider px-4 py-5 rounded-full text-white border border-gray-200 group">
           <span className="relative z-10 group-hover:text-black transition-colors duration-300">
             +923265527246
           </span>
@@ -101,7 +124,7 @@ function About() {
               <h1 className="uppercase font-neue_montreal_Medium text-[#7B7A7C] text-[.6rem] ">
                 version
               </h1>
-              <h1 className="font-neue_montreal_Medium text-white tracking-wide">
+              <h1 className="btn font-neue_montreal_Medium text-white tracking-wide">
                 2024 © Edition
               </h1>
             </div>
@@ -109,7 +132,7 @@ function About() {
               <h1 className="uppercase font-neue_montreal_Medium text-[#7B7A7C] text-[.6rem] ">
                 LOCAL TIME
               </h1>
-              <h1 className="font-neue_montreal_Medium text-white tracking-wide">
+              <h1 className="btn font-neue_montreal_Medium text-white tracking-wide">
                 {currentTime}
               </h1>{" "}
             </div>
@@ -121,17 +144,17 @@ function About() {
               </h1>
               <div className="flex gap-3 justify-between md:justify-normal w-full">
                 <a
-                  className="font-neue_montreal_Medium text-white relative overflow-hidden group px-2 py-1 rounded-full"
+                  className="btn font-neue_montreal_Medium text-white relative overflow-hidden group px-2 py-1 rounded-full"
                   href="https://twitter.com/HassanR089"
                 >
-                  <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+                  <span className="  relative z-10 group-hover:text-black transition-colors duration-300">
                     Twitter
                   </span>
                   <span className="absolute inset-0 bg-white transform scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300 ease-out"></span>
                   <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white transform scale-x-0 origin-right transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left"></span>
                 </a>
                 <a
-                  className="font-neue_montreal_Medium text-white relative overflow-hidden group  px-2 py-1 rounded-full"
+                  className="btn font-neue_montreal_Medium text-white relative overflow-hidden group  px-2 py-1 rounded-full"
                   href="https://linkedin.com/in/muhammad-hassan-raza-a64b9b306"
                 >
                   <span className="relative z-10 group-hover:text-black transition-colors duration-300">
@@ -142,7 +165,7 @@ function About() {
                 </a>
 
                 <a
-                  className="font-neue_montreal_Medium text-white relative overflow-hidden group  px-2 py-1 rounded-full"
+                  className="btn font-neue_montreal_Medium text-white relative overflow-hidden group  px-2 py-1 rounded-full"
                   href="https://instagram.com/hassan__0__1__0"
                 >
                   <span className="relative z-10 group-hover:text-black transition-colors duration-300">
@@ -152,7 +175,7 @@ function About() {
                   <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white transform scale-x-0 origin-right transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left"></span>
                 </a>
                 <a
-                  className="font-neue_montreal_Medium text-white relative overflow-hidden group  px-2 py-1 rounded-full"
+                  className="btn font-neue_montreal_Medium text-white relative overflow-hidden group  px-2 py-1 rounded-full"
                   href="https://dev.to/hassanwebdev"
                 >
                   <span className="relative z-10 group-hover:text-black transition-colors duration-300">
