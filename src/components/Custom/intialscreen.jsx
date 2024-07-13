@@ -23,7 +23,7 @@ const InitialLoadingScreen = () => {
     })
 
     
-    tl.set(screenRef.current, { scaleY: 0, transformOrigin: 'bottom' })
+
     tl.set(textRef.current, { opacity: 0, y: 20 })
     tl.set(loaderRef.current, { opacity: 0 })
 
