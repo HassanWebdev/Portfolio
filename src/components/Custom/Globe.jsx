@@ -102,7 +102,7 @@ export default function IconCloudDemo() {
             return (
               <div
               key={index}
-              className="skills w-full cursor-pointer rounded-full border-1 border-[#1D1D21] pl-5 md:px-3 py-2 relative overflow-hidden group"
+              className="skills w-full cursor-pointer rounded-full border-1 border-[#1D1D21] pl-10 md:px-3 py-2 relative overflow-hidden group"
             >
               <div className="">
                 <h2 className="text-xl font-neue_montreal_Bold text-gray-800 relative z-10 group-hover:text-white transition-colors duration-300">
