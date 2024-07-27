@@ -9,7 +9,7 @@ import scss from "@/app/img/Screenshot 2024-07-07 121743.png";
 import tailwind from "@/app/img/Screenshot 2024-07-07 121803.png";
 import jquery from "@/app/img/Screenshot 2024-07-07 125308.png";
 import bootstrap from "@/app/img/Screenshot 2024-07-07 121846.png";
-import Horizon from "@app/img/Screenshot 2024-07-27 223757.png",
+import Horizon from "@app/img/Screenshot 2024-07-27 223757.png";
 import Image from "next/image";
 import { BorderBeam } from "../ui/border-beam";
 import gsap from "gsap";
