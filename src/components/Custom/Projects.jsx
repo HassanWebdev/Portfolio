@@ -52,6 +52,11 @@ function Projects() {
   });
   const projects = [
     {
+      project:"Horizon-Dashboard",
+      url:"https://horizon-dashboard-xi.vercel.app/",
+      text: " Interaction & Development"
+    },
+    {
       project: "Bloging",
       url: "https://next-js-drab-chi.vercel.app/",
       text: " Interaction & Development",
