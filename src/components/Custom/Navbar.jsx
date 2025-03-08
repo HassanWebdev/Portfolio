@@ -55,7 +55,7 @@ const Navbar = ({ background }) => {
     return (
       <Link
         href={href}
-        className={`text-xl overflow-hidden relative flex group px-2 rounded-full ${
+        className={`text-xl overflow-hidden relative flex group px-4 rounded-full ${
           isActive ? "bg-black text-white" : ""
         }`}
       >

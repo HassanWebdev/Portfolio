@@ -11,6 +11,7 @@ import tailwind from "@/app/img/Screenshot 2024-07-07 121803.png";
 import jquery from "@/app/img/Screenshot 2024-07-07 125308.png";
 import bootstrap from "@/app/img/Screenshot 2024-07-07 121846.png";
 import { LinkPreview } from "../ui/link-preview";
+import mockmaster from "@/components/ui/MockMaster.png";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -21,7 +22,15 @@ function Projectpage() {
   const responsive = gsap.matchMedia();
   const projects = [
     {
-      project: "Bloging",
+      project: "MockMaster.AI",
+      url: "https://mockmaster-inky.vercel.app/",
+      text: " Interaction & Development",
+      img: mockmaster,
+      year: 2025,
+      location: "My Own",
+    },,
+    {
+      project: "Bloging Platform",
       url: "https://next-js-drab-chi.vercel.app/",
       text: "Interaction & Development",
       img: bloging,
@@ -29,7 +38,15 @@ function Projectpage() {
       location: "Japan",
     },
     {
-      project: "E-commerce",
+      project: "Nexcent",
+      url: "https://tailwind-project0896.netlify.app/",
+      text: "Design & Development",
+      img: tailwind,
+      year: 2024,
+      location: "Australia",
+    },
+    {
+      project: "Fitness Depot",
       url: "https://reactproject0896.netlify.app/",
       text: "Design & Development",
       img: ecommerce,
@@ -45,31 +62,7 @@ function Projectpage() {
       location: "Canada",
     },
     {
-      project: "Scss",
-      url: "https://scss-project0896.netlify.app/",
-      text: "Interaction & Development",
-      img: scss,
-      year: 2020,
-      location: "Brazil",
-    },
-    {
-      project: "Tailwind",
-      url: "https://tailwind-project0896.netlify.app/",
-      text: "Design & Development",
-      img: tailwind,
-      year: 2024,
-      location: "Australia",
-    },
-    {
-      project: "J-Query",
-      url: "https://jquery-project0896.netlify.app/",
-      text: "Interaction & Development",
-      img: jquery,
-      year: 2022,
-      location: "France",
-    },
-    {
-      project: "Bootstrap",
+      project: "BookMark",
       url: "https://bootstrap-project011.netlify.app/",
       text: "Interaction & Development",
       img: bootstrap,
@@ -146,16 +139,74 @@ function Projectpage() {
             </span>
           </h1>
         </div>
-        <div className="w-full">
-          {
-            mobile ? '':(<div className="flex justify-between pb-5">
-            <h1 className="text-sm opacity-80 uppercase">client</h1>
-            <h1 className="text-sm opacity-80 uppercase">Location</h1>
-            <h1 className="text-sm opacity-80 uppercase">Services</h1>
-            <h1 className="text-sm opacity-80 uppercase">year</h1>
-          </div>)
-          }
-          
+        <div className="p-5 bg-zinc-200 rounded-lg">
+          <div className="relative w-max p-5 items-center ">
+            {" "}
+            <h1 className="text-3xl  text-gray-900 font-neue_montreal_Bold tracking-wide opacity-85 uppercase mb-7 ">
+              Biggest achievements
+            </h1>
+            <p className="font-neue_montreal opacity-70">
+              MockMaster – Your ultimate AI-powered interview platform for
+              business cases. 🚀 <br /> Conduct real-time, intelligent mock
+              interviews with instant feedback. 📊 <br /> Sharpen your
+              problem-solving skills with dynamic, case-based AI evaluation. 💡{" "}
+              <br /> Ace your next big interview with MockMaster – Practice.
+              Perform. Succeed! 🎯
+            </p>{" "}
+            <BorderBeam
+              size={400}
+              duration={5}
+              delay={5}
+              borderWidth={3}
+              colorFrom="#D448EE"
+              colorTo="#19ADD7"
+            />
+          </div>
+          <div >
+            <LinkPreview
+              url={`https://mockmaster-inky.vercel.app/`}
+              width={700}
+              height={400}
+              quality={100}
+              className="z-50"
+            >
+              <div className="w-full relative h-80 border-y-1 border-gray-300  flex justify-between items-center transition-all   hover:px-5 hover:opacity-50">
+                <div>
+                  <h1 className="text-2xl font-neue_montreal_Medium uppercase">
+                    MockMaster.AI
+                  </h1>
+                </div>
+
+                <div>
+                  <Image
+                    src={mockmaster}
+                    width={600}
+                    height={600}
+                    alt=""
+                    className="rounded-lg "
+                  />
+                </div>
+                <div>
+                  <h1 className="text-xl opacity-70">
+                    Interaction & Development
+                  </h1>
+                </div>
+              </div>
+            </LinkPreview>
+          </div>
+        </div>
+        <div className="w-full mt-12">
+          {mobile ? (
+            ""
+          ) : (
+            <div className="flex justify-between pb-5">
+              <h1 className="text-sm opacity-80 uppercase">client</h1>
+              <h1 className="text-sm opacity-80 uppercase">Location</h1>
+              <h1 className="text-sm opacity-80 uppercase">Services</h1>
+              <h1 className="text-sm opacity-80 uppercase">year</h1>
+            </div>
+          )}
+
           {mobile ? (
             <div className="flex flex-wrap justify-center items-center gap-5 py-5">
               {projects.map((item, index) => {
@@ -197,7 +248,6 @@ function Projectpage() {
             projects.map((item, index) => {
               return (
                 <div key={index} id="desklinks">
-                  
                   <LinkPreview
                     url={`${item.url}`}
                     width={400}

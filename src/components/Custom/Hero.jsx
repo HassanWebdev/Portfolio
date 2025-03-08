@@ -1,52 +1,174 @@
-'use client'
-import React, { useState } from 'react';
-import mypic from '@/app/img/asli.png';
-import Image from 'next/image';
-import { VelocityScroll } from '@/components/ui/scroll-based-velocity';
+"use client";
+import React, { useEffect } from "react";
+import mypic from "@/app/img/asli.png";
+import Image from "next/image";
+import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import { BorderBeam } from "@/components/ui/border-beam";
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 function Hero() {
-  useGSAP(()=>{
-    window.addEventListener('mousemove',(e)=>{
-      gsap.to('#mouse',{
-        x:e.clientX,
-        y:e.clientY,
-        duration:.4,
-        ease:'none'
-      })
-    })
-  })
+  useGSAP(() => {
+    const container = document.createElement('div');
+    container.style.position = 'fixed';
+    container.style.top = '0';
+    container.style.left = '0';
+    container.style.width = '100%';
+    container.style.height = '100%';
+    container.style.pointerEvents = 'none';
+    container.style.zIndex = '9999';
+    document.body.appendChild(container);
+
+    const existingMouse = document.getElementById('mouse');
+    if (existingMouse) {
+      existingMouse.remove();
+    }
+
+    const cursor = document.createElement('div');
+    cursor.id = 'mouse';
+    cursor.style.width = '16px';
+    cursor.style.height = '16px';
+    cursor.style.borderRadius = '50%';
+    cursor.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+    cursor.style.position = 'fixed';
+    cursor.style.transform = 'translate(-50%, -50%)';
+    cursor.style.mixBlendMode = 'difference';
+    cursor.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.5)';
+    cursor.style.zIndex = '99';
+    cursor.style.pointerEvents = 'none';
+    container.appendChild(cursor);
+
+    const trailCount = 4;
+    const trails = [];
+    
+    for (let i = 0; i < trailCount; i++) {
+      const trail = document.createElement('div');
+      trail.className = 'mouse-trail';
+      trail.style.width = `${12 - i * 2}px`;
+      trail.style.height = `${12 - i * 2}px`;
+      trail.style.borderRadius = '50%';
+      trail.style.backgroundColor = `rgba(255, 255, 255, ${0.7 - i * 0.15})`;
+      trail.style.position = 'fixed';
+      trail.style.transform = 'translate(-50%, -50%)';
+      trail.style.mixBlendMode = 'difference';
+      trail.style.zIndex = '98';
+      trail.style.pointerEvents = 'none';
+      container.appendChild(trail);
+      trails.push(trail);
+    }
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let prevMouseX = 0;
+    let prevMouseY = 0;
+    
+    const handleMouseMove = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      const velocityX = Math.abs(mouseX - prevMouseX);
+      const velocityY = Math.abs(mouseY - prevMouseY);
+      const velocity = Math.min(Math.sqrt(velocityX * velocityX + velocityY * velocityY) * 0.05, 1);
+      
+      gsap.to(cursor, {
+        width: 16 + velocity * 20,
+        height: 16 + velocity * 20,
+        duration: 0.3,
+      });
+      
+      prevMouseX = mouseX;
+      prevMouseY = mouseY;
+    };
+
+    const render = () => {
+      gsap.to(cursor, {
+        x: mouseX,
+        y: mouseY,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+      
+      trails.forEach((trail, index) => {
+        gsap.to(trail, {
+          x: mouseX,
+          y: mouseY,
+          duration: 0.5 + index * 0.1,
+          ease: "power3.out",
+          delay: index * 0.04,
+        });
+      });
+      
+      requestAnimationFrame(render);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    render();
+
+    const addHoverEffects = () => {
+      const interactiveElements = document.querySelectorAll('a, button, input, select, textarea, [role="button"]');
+      
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          gsap.to(cursor, {
+            width: 40,
+            height: 40,
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            duration: 0.3
+          });
+        });
+        
+        el.addEventListener('mouseleave', () => {
+          gsap.to(cursor, {
+            width: 16,
+            height: 16,
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            duration: 0.3
+          });
+        });
+      });
+    };
+    
+    addHoverEffects();
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (container && document.body.contains(container)) {
+        document.body.removeChild(container);
+      }
+    };
+  }, []);
+
   return (
-    <div className=''>
-      <div id='mouse' className={`w-5 h-5 bg-black fixed  top-0  left-0 z-[99] rounded-full pointer-events-none `}></div>
-      <div  className='w-[50%] md:w-[35%] md:h-56 h-40 top-20 md:top-14 bg-white absolute rounded-tr-full rounded-br-full z-10 mix-blend-difference '></div>
-      <div  className='w-[35%] md:h-56 h-40  md:bg-white absolute right-0 bottom-0  rounded-tl-full rounded-bl-full z-40 mix-blend-difference '></div>
-      <div className='text-white w-full flex justify-center items-center'>
-        <div className='relative z-10 mix-blend-normal'>
-        <Image
-          src={mypic}
-          alt='no img'
-          width={400}
-          height={600}
-          className='grayscale-[95%] '
-        />
-        <BorderBeam size={250} duration={5} delay={5} borderWidth={4} />
+    <div className="h-screen relative  overflow-hidden">
+      <div className="w-[50%] md:w-[35%] md:h-56 h-40 top-20 md:top-14 bg-white absolute rounded-tr-full rounded-br-full z-10 mix-blend-difference"></div>
+      <div className="w-[35%] md:h-56 h-40 md:bg-white absolute right-0 bottom-0 rounded-tl-full rounded-bl-full z-40 mix-blend-difference"></div>
+      
+      <div className="text-white absolute bottom-0 z-10 left-1/2 -translate-x-1/2">
+        <div className="relative mix-blend-normal px-10 pt-10">
+          <Image
+            src={mypic}
+            alt="Hassan Raza"
+            width={400}
+            height={900}
+            className="grayscale-[95%]"
+          />
+          <BorderBeam size={250} duration={5} delay={5} borderWidth={4} />
         </div>
-       
       </div>
-      <div className='absolute md:bottom-0 bottom-16 w-full  overflow-hidden z-20  pointer-events-none'>
+      
+      <div className="absolute md:bottom-0 bottom-16 w-full overflow-hidden z-20 pointer-events-none">
         <VelocityScroll
-          text='Hassan__Raza__'
+          text="__HASSAN__RAZA "
           default_velocity={5}
-          className=' text-white text-[10rem] md:text-[15rem] font-neue_montreal leading-none'
+          className="text-white text-[10rem] md:text-[15rem] font-neue_montreal leading-none"
         />
       </div>
-      <div className='absolute md:top-10 top-20 w-full  overflow-hidden pointer-events-none '>
+      
+      <div className="absolute md:top-10 top-20 w-full overflow-hidden pointer-events-none">
         <VelocityScroll
-          text='MERN - Developer -'
+          text="MERN - Developer -"
           default_velocity={5}
-          className=' text-white text-[10rem] md:text-[15rem] font-neue_montreal  leading-none'
+          className="text-white text-[10rem] md:text-[15rem] font-neue_montreal leading-none"
         />
       </div>
     </div>

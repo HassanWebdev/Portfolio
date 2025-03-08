@@ -1,48 +1,53 @@
-'use client'
+"use client";
 import { useGSAP } from "@gsap/react";
 import { BorderBeam } from "../ui/border-beam";
 import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export default function MeteorDemo() {
   useGSAP(() => {
     const animate = gsap.timeline({
       scrollTrigger: {
         trigger: "#main",
-        start: "top 65%", 
-        end: "bottom bottom", 
-        scrub:2
+        start: "top 65%",
+        end: "bottom bottom",
+        scrub: 2,
       },
     });
-  
+
     animate
-      .from('#left', {
+      .from("#left", {
         scale: 0,
         duration: 1.1,
-        ease: 'power4.out'
+        ease: "power4.out",
       })
-      .from('#right', {
-        scale: 0,
-        duration: 1.1,
-        delay:.5,
-        ease: 'power4.out'
-      }, "<"); 
-  
+      .from(
+        "#right",
+        {
+          scale: 0,
+          duration: 1.1,
+          delay: 0.5,
+          ease: "power4.out",
+        },
+        "<"
+      );
   }, []);
 
   const words = [
     {
       text: "Hi,",
-      className:'font-neue_montreal'
+      className: "font-neue_montreal",
     },
     {
-      text: "I,m",className:'font-neue_montreal'
+      text: "I,m",
+      className: "font-neue_montreal",
     },
     {
-      text: "a",className:'font-neue_montreal'
+      text: "a",
+      className: "font-neue_montreal",
     },
     {
       text: "MERN",
@@ -56,14 +61,16 @@ export default function MeteorDemo() {
       text: "Developer .",
       className: "text-[#3e8e8e] font-neue_montreal_Medium",
     },
-    
   ];
   return (
-    <div id="main" className=" bg-white  w-full py-24 px-5 md:px-10 rounded-tr-3xl rounded-tl-3xl">
+    <div
+      id="main"
+      className=" bg-white  w-full py-24 px-5 md:px-10 rounded-tr-3xl rounded-tl-3xl"
+    >
       <div>
         <TypewriterEffectSmooth words={words} />
       </div>
-      <div className="relative w-full flex flex-col md:flex-row gap-14 py-2 px-2 items-center ">
+      <div className="relative w-full flex flex-col md:flex-row gap-14 p-10 items-center ">
         <p id="left" className="font-neue_montreal_Medium text-3xl opacity-90">
           Helping brands to stand out in the digital era. Together we will set
           the new status quo. No nonsense, always on the cutting edge.

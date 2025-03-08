@@ -29,20 +29,6 @@ function Experience() {
       achievements: "Built responsive web applications",
       technologies: ["JavaScript", "Vue.js", "CSS3", "Git"],
     },
-    {
-      year: 2018,
-      role: "Junior Web Developer",
-      company: "Digital Creations Co.",
-      achievements: "Assisted in UI/UX improvements",
-      technologies: ["HTML5", "CSS3", "JavaScript", "jQuery"],
-    },
-    {
-      year: 2017,
-      role: "Web Design Intern",
-      company: "StartUp Innovations",
-      achievements: "Learned basics of web development",
-      technologies: ["Adobe Photoshop", "HTML", "CSS", "JavaScript", "WordPress"],
-    },
   ];
 
   useGSAP(() => {

@@ -49,6 +49,7 @@ export const LinkPreview = ({
       "viewport.width": width * 3,
       "viewport.height": height * 3,
     });
+    
     src = `https://api.microlink.io/?${params}`;
   } else {
     src = imageSrc;
@@ -135,6 +136,8 @@ export const LinkPreview = ({
               >
                 <Link
                   href={url}
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="block p-1 z-40 bg-white border-2  border-black shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
                   style={{ fontSize: 0 }}
                 >

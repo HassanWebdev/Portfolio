@@ -125,7 +125,7 @@ function About() {
                 version
               </h1>
               <h1 className="btn font-neue_montreal_Medium text-white tracking-wide">
-                2024 © Edition
+                2025 © Edition
               </h1>
             </div>
             <div className="flex flex-col gap-2">

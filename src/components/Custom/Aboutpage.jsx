@@ -1,14 +1,45 @@
 "use client";
 import Navbar from "@/components/Custom/Navbar";
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import img from "@/app/img/for-about.png";
+import img1 from '@/components/ui/Picsart_24-12-29_18-36-40-317.jpg'
+import img2 from '@/components/ui/hassan_raza.jpg'
 import About from "./About2";
-import  { ScrollTrigger } from 'gsap/all'
+import { ScrollTrigger } from 'gsap/all'
+import dynamic from "next/dynamic";
+
+// Import hover-effect with dynamic import to avoid SSR issues
+const HoverEffect = dynamic(() => import('../Custom/HoverEffectWrapper'), { ssr: false });
+
 gsap.registerPlugin(ScrollTrigger)
+
 function Page() {
+  const containerRef = useRef(null);
+  const imageRef = useRef(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [img, img1, img2];
+  const imageUrls = images.map(img => typeof img === 'object' ? img.src : img);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => {
+        const next = (prev + 1) % images.length;
+        
+        if (containerRef.current) {
+          // Trigger the next image transition
+          containerRef.current.nextImage();
+        }
+        
+        return next;
+      });
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   useGSAP(() => {
     const tl2 = gsap.timeline({
       scrollTrigger:{
@@ -48,6 +79,7 @@ function Page() {
       stagger:.4,
       ease: "power2.out",
     })
+
     window.addEventListener("mousemove", (e) => {
       gsap.to("#mouse", {
         x: e.clientX,
@@ -57,17 +89,20 @@ function Page() {
       });
     });
 
+    return () => {
+      window.removeEventListener("mousemove", () => {});
+    };
   });
+
   return (
     <>
-      {" "}
       <Navbar background={"bg-white text-gray-600"} />
       <div className="w-full h-auto px-5 md:px-10 ">
         <div
           id="mouse"
           className={`w-5 h-5 bg-black fixed top-0  left-0 z-[99] rounded-full pointer-events-none `}
         ></div>
-        <div className=" flex  sm:justify-center sm:pt-40 pt-20 pb-20 ">
+        <div className=" flex sm:justify-center sm:pt-40 pt-20 pb-20 ">
           <h1 className="overflow-hidden font-neue_montreal text-5xl sm:text-7xl md:text-8xl">
             <span className="title leading-tight inline-block">Helping brands thrive</span>
             <br />
@@ -75,15 +110,22 @@ function Page() {
           </h1>
         </div>
         <div className="w-full border-t-2 py-10 sm:flex justify-center ">
-          <div className="w-full md:w-1/2 h-auto flex justify-center  pb-5">
+          <div className="w-full md:w-1/2 h-auto flex justify-center pb-5">
             <p className="spanny font-neue_montreal text-gray-600 sm:w-72 ">
               I help companies from all over the world with tailor-made
               solutions. With each project, I push my work to new horizons,
               always putting quality first
             </p>
           </div>
-          <div className="me w-full md:w-1/2">
-            <Image src={img} width={1000} alt="" className="rounded-xl" />
+          <div className="me w-full md:w-1/2 overflow-hidden">
+            <div ref={imageRef} className="transform-gpu" style={{ perspective: "1000px" }}>
+              <Image 
+                src={images[currentImageIndex]} 
+                width={1000} 
+                alt="Profile image" 
+                className="rounded-xl"
+              />
+            </div>
           </div>
         </div>
         <div className="events h-auto w-full pt-5 pb-20">

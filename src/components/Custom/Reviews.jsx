@@ -7,31 +7,31 @@ import { Star, StarBorder } from "@mui/icons-material";
 
 const clientReviews = [
   {
-    name: "Sarah Johnson",
+    name: "Sarah ",
     stars: 5,
     message:
       "Absolutely amazing work! The project was completed ahead of schedule and exceeded all my expectations. Highly recommended!",
   },
   {
-    name: "Michael Chen",
+    name: "Chen",
     stars: 4,
     message:
       "Very professional and responsive. The final product was exactly what I needed for my business. Great job!",
   },
   {
-    name: "Emily Rodriguez",
+    name: "Emily robert",
     stars: 5,
     message:
       "Incredible attention to detail. The project was flawless and the communication throughout was excellent. Will definitely work with again!",
   },
   {
-    name: "David Thompson",
+    name: "David",
     stars: 5,
     message:
       "Outstanding service! The project was delivered on time and the quality of work was top-notch. Couldn't be happier with the results.",
   },
   {
-    name: "Lisa Patel",
+    name: "Lisa",
     stars: 4,
     message:
       "Great experience working together. Very patient with revisions and delivered a fantastic end product. Thank you!",
@@ -55,13 +55,13 @@ const clientReviews = [
       "Brilliant work! The attention to detail and problem-solving skills were impressive. Looking forward to our next collaboration!",
   },
   {
-    name: "Emma Wilson",
+    name: " Emma Wilson",
     stars: 5,
     message:
       "A pleasure to work with. Understood my vision perfectly and delivered beyond expectations. Will definitely hire again!",
   },
   {
-    name: "Daniel Lee",
+    name: "Daniel Bud",
     stars: 4,
     message:
       "Very knowledgeable and skilled. Provided valuable insights that improved the initial concept. Great communication throughout the project.",
@@ -117,11 +117,11 @@ const ReviewMarquee = () => {
         </Marquee>
       </Box>
       <Box sx={{ mt: 0 }}>
-        <Marquee gradient={false} speed={40} pauseOnHover={true} direction='right' className="hover:cursor-pointer">
+        {/* <Marquee gradient={false} speed={40} pauseOnHover={true} direction='right' className="hover:cursor-pointer">
           {clientReviews.map((review, index) => (
             <ReviewCard key={index} review={review} />
           ))}
-        </Marquee>
+        </Marquee> */}
       </Box>
     </div>
   );
