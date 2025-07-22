@@ -76,8 +76,31 @@ function About() {
               </h1>
             </div>
           </div>
-          <div>
+          <div 
+            className="cursor-pointer hover:scale-110 transition-transform duration-300"
+            onClick={() => {
+              const arrow = document.querySelector('.arrow-svg');
+              gsap.timeline()
+                .to(arrow, {
+                  rotate: 45,
+                  scale: 1.5,
+                  y: -10,
+                  x: 10,
+                  duration: 0.3,
+                  ease: "power2.out"
+                })
+                .to(arrow, {
+                  rotate: 0,
+                  scale: 1,
+                  y: 0,
+                  x: 0,
+                  duration: 0.5,
+                  ease: "elastic.out(1, 0.3)"
+                });
+            }}
+          >
             <svg
+              className="arrow-svg"
               width="14px"
               height="14px"
               viewBox="0 0 14 14"
@@ -146,6 +169,8 @@ function About() {
                 <a
                   className="btn font-neue_montreal_Medium text-white relative overflow-hidden group px-2 py-1 rounded-full"
                   href="https://twitter.com/HassanR089"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <span className="  relative z-10 group-hover:text-black transition-colors duration-300">
                     Twitter
@@ -156,6 +181,8 @@ function About() {
                 <a
                   className="btn font-neue_montreal_Medium text-white relative overflow-hidden group  px-2 py-1 rounded-full"
                   href="https://linkedin.com/in/muhammad-hassan-raza-a64b9b306"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <span className="relative z-10 group-hover:text-black transition-colors duration-300">
                     LinkedIn
@@ -167,6 +194,8 @@ function About() {
                 <a
                   className="btn font-neue_montreal_Medium text-white relative overflow-hidden group  px-2 py-1 rounded-full"
                   href="https://instagram.com/hassan__0__1__0"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <span className="relative z-10 group-hover:text-black transition-colors duration-300">
                     Instagram
@@ -177,6 +206,8 @@ function About() {
                 <a
                   className="btn font-neue_montreal_Medium text-white relative overflow-hidden group  px-2 py-1 rounded-full"
                   href="https://dev.to/hassanwebdev"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <span className="relative z-10 group-hover:text-black transition-colors duration-300">
                     Dev

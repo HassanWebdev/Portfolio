@@ -9,25 +9,32 @@ gsap.registerPlugin(ScrollTrigger);
 function Experience() {
   const experienceTimeline = [
     {
-      year: 2024,
-      role: "Senior MERN Developer",
+      year: 2025,
+      role:"Full Stack Developer (Next.js, Nest.js)",
       company: "Rev9-Solution",
-      achievements: "Implementing advanced React patterns",
-      technologies: ["React.js",  "Next.js",'redux',"TypeScript",],
+      achievements: "Led the development of a scalable web application using React and Node.js. Implemented RESTful APIs and optimized database queries, resulting in a 40% performance improvement.",
+      technologies: ["React.js", "Next.js", "Express.js", "Nest.js", "GraphQL"],
+    },
+    {
+      year: 2024,
+      role: "Next.js Developer",
+      company: "Rev9-Solution",
+      achievements: "Integrated third-party APIs and implemented state management solutions.",
+      technologies: ["Next.js", "Redux", "TypeScript"],
+    },
+    {
+      year: 2023,
+      role: "React Developer",
+      company: "Rev9-Solution",
+      achievements: "Designed and developed responsive UI components used across multiple projects. Integrated third-party APIs and implemented state management solutions resulting in 30% faster rendering.",
+      technologies: ["React.js", "Next.js", "Redux", "TypeScript", "Tailwind CSS"],
     },
     {
       year: 2022,
-      role: "React.js Developer",
-      company: "TechInnovate Systems",
-      achievements: "Developed scalable React applications",
-      technologies: ["React.js", "Redux", "Jest", "Webpack"],
-    },
-    {
-      year: 2020,
       role: "Frontend Developer",
-      company: "WebSphere Solutions",
-      achievements: "Built responsive web applications",
-      technologies: ["JavaScript", "Vue.js", "CSS3", "Git"],
+      company: "TechInnovate Systems",
+      achievements: "Built interactive web interfaces for enterprise clients. Collaborated with UX designers to implement pixel-perfect designs and ensure cross-browser compatibility.",
+      technologies: ["HTML", "CSS", "JavaScript", "SCSS", "Git", "Figma"],
     },
   ];
 

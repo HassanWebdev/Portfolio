@@ -17,57 +17,87 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 import { BorderBeam } from "../ui/border-beam";
+import Case from "@/app/img/Case.png";
+import Vyafac from "@/app/img/vyafac.png";
+import career from "@/app/img/career.png";
 
 function Projectpage() {
   const responsive = gsap.matchMedia();
-  const projects = [
+  const data = [
     {
-      project: "MockMaster.AI",
+      project: "Vyafac",
+      url: "https://vyafac.com/",
+      text: " Interaction & Development",
+      img: Vyafac,
+      isStatic: true,
+    },
+    {
+      project: "Career Year",
+      url: "https://career-years.com/",
+      text: " Interaction & Development",
+      img: career,
+    },
+    {
+      project: "MockMaster AI",
       url: "https://mockmaster-inky.vercel.app/",
       text: " Interaction & Development",
       img: mockmaster,
+    },
+    {
+      project: "Case Solver AI",
+      url: "https://casesolver.ai/login",
+      text: " Interaction & Development",
+      img: Case,
+    },
+    {
+      project: "Blogging Platform",
+      url: "https://bloging-site-peach.vercel.app/",
+      text: " Interaction & Development",
+      img: bloging,
+    },
+  ];
+  const projects = [
+    {
+      project: "Vyafac",
+      url: "https://vyafac.com/",
+      text: " Interaction & Development",
+      img: Vyafac,
+      isStatic: true,
       year: 2025,
       location: "My Own",
-    },,
+    },
+
     {
-      project: "Bloging Platform",
-      url: "https://next-js-drab-chi.vercel.app/",
-      text: "Interaction & Development",
-      img: bloging,
-      year: 2024,
+      project: "Career Year",
+      url: "https://career-years.com/",
+      text: " Interaction & Development",
+      img: career,
+      year: 2025,
       location: "Japan",
     },
     {
-      project: "Nexcent",
-      url: "https://tailwind-project0896.netlify.app/",
-      text: "Design & Development",
-      img: tailwind,
+      project: "MockMaster AI",
+      url: "https://mockmaster-inky.vercel.app/",
+      text: " Interaction & Development",
+      img: mockmaster,
       year: 2024,
       location: "Australia",
     },
     {
-      project: "Fitness Depot",
-      url: "https://reactproject0896.netlify.app/",
-      text: "Design & Development",
-      img: ecommerce,
+      project: "Case Solver AI",
+      url: "https://casesolver.ai/login",
+      text: " Interaction & Development",
+      img: Case,
       year: 2023,
       location: "Germany",
     },
     {
-      project: "Ochi-Design",
-      url: "https://ochiclone0896.netlify.app/",
-      text: "Design & Development",
-      img: ochi,
-      year: 2021,
+      project: "Blogging Platform",
+      url: "https://bloging-site-peach.vercel.app/",
+      text: " Interaction & Development",
+      img: bloging,
+      year: 2022,
       location: "Canada",
-    },
-    {
-      project: "BookMark",
-      url: "https://bootstrap-project011.netlify.app/",
-      text: "Interaction & Development",
-      img: bootstrap,
-      year: 2021,
-      location: "South Africa",
     },
   ];
   useGSAP(() => {
@@ -162,7 +192,7 @@ function Projectpage() {
               colorTo="#19ADD7"
             />
           </div>
-          <div >
+          <div>
             <LinkPreview
               url={`https://mockmaster-inky.vercel.app/`}
               width={700}
@@ -254,6 +284,8 @@ function Projectpage() {
                     height={300}
                     quality={100}
                     className="z-50"
+                    isStatic={item.isStatic}
+                    imageSrc={item.isStatic ? item.img : undefined}
                   >
                     <div className="w-full h-32 border-y-1 flex justify-between items-center transition-all  hover:px-5 hover:opacity-50">
                       <div className="w-10">

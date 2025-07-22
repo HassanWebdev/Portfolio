@@ -4,16 +4,15 @@ import { motion } from "framer-motion";
 import { LinkPreview } from "@/components/ui/link-preview";
 import mockmaster from "@/components/ui/MockMaster.png";
 import bloging from "@/app/img/Screenshot 2024-07-07 121628.png";
-import ecommerce from "@/app/img/Screenshot 2024-07-07 121658.png";
-import ochi from "@/app/img/Screenshot 2024-07-07 121719.png";
-import scss from "@/app/img/Screenshot 2024-07-07 121743.png";
-import tailwind from "@/app/img/Screenshot 2024-07-07 121803.png";
-import bootstrap from "@/app/img/Screenshot 2024-07-07 121846.png";
 import Image from "next/image";
 import { BorderBeam } from "../ui/border-beam";
 import gsap from "gsap";
+import career from "@/app/img/career.png";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import Case from "@/app/img/Case.png";
+import Vyafac from "@/app/img/vyafac.png";
+
 gsap.registerPlugin(ScrollTrigger);
 function Projects() {
   const [mobile, setmobile] = useState(false);
@@ -52,40 +51,35 @@ function Projects() {
   });
   const projects = [
     {
-      project: "MockMaster.AI",
+      project: "Vyafac",
+      url: "https://vyafac.com/",
+      text: " Interaction & Development",
+      img: Vyafac,
+      isStatic: true,
+    },
+    {
+      project: "Career Year",
+      url: "https://career-years.com/",
+      text: " Interaction & Development",
+      img: career,
+    },
+    {
+      project: "MockMaster AI",
       url: "https://mockmaster-inky.vercel.app/",
       text: " Interaction & Development",
       img: mockmaster,
+    },
+    {
+      project: "Case Solver AI",
+      url: "https://casesolver.ai/login",
+      text: " Interaction & Development",
+      img: Case,
     },
     {
       project: "Blogging Platform",
       url: "https://bloging-site-peach.vercel.app/",
       text: " Interaction & Development",
       img: bloging,
-    },
-    {
-      project: "Fitness Depot",
-      url: "https://reactproject0896.netlify.app/",
-      text: "Design & Development",
-      img: ecommerce,
-    },
-    {
-      project: "Ochi-Design",
-      url: "https://ochiclone0896.netlify.app/",
-      text: "Design & Development",
-      img: ochi,
-    },
-    {
-      project: "Nexcent",
-      url: "https://tailwind-project0896.netlify.app/",
-      text: "Design & Development",
-      img: tailwind,
-    },
-    {
-      project: "BookMark",
-      url: "https://bootstrap-project011.netlify.app/",
-      text: " Interaction & Development",
-      img: bootstrap,
     },
   ];
   useGSAP(() => {
@@ -104,55 +98,56 @@ function Projects() {
   });
   return (
     <div className="bg-zinc-50 font-neue_montreal w-full  pt-5 px-5 md:px-10">
-      <div className="p-5 bg-zinc-200 rounded-lg">
-        <div className="relative w-max p-5 items-center ">
+      <div className="p-3 md:p-5 bg-zinc-200 rounded-lg">
+        <div className="relative w-full md:w-max p-3 md:p-5 items-center">
           {" "}
-          <h1 className="text-3xl  text-gray-900 font-neue_montreal_Bold tracking-wide opacity-85 uppercase mb-7 ">
+          <h1 className="text-2xl md:text-3xl text-gray-900 font-neue_montreal_Bold tracking-wide opacity-85 uppercase mb-4 md:mb-7">
             Biggest achievements
           </h1>
-          <p className="font-neue_montreal opacity-70">
+          <p className="font-neue_montreal opacity-70 text-sm md:text-base">
             MockMaster – Your ultimate AI-powered interview platform for
-            business cases. 🚀 <br /> Conduct real-time, intelligent mock
-            interviews with instant feedback. 📊 <br /> Sharpen your
-            problem-solving skills with dynamic, case-based AI evaluation. 💡{" "}
-            <br /> Ace your next big interview with MockMaster – Practice.
-            Perform. Succeed! 🎯
+            business cases. 🚀 <br className="hidden sm:block" /> Conduct
+            real-time, intelligent mock interviews with instant feedback. 📊{" "}
+            <br className="hidden sm:block" /> Sharpen your problem-solving
+            skills with dynamic, case-based AI evaluation. 💡{" "}
+            <br className="hidden sm:block" /> Ace your next big interview with
+            MockMaster – Practice. Perform. Succeed! 🎯
           </p>{" "}
           <BorderBeam
-            size={400}
+            size={mobile ? 250 : 400}
             duration={5}
             delay={5}
-            borderWidth={3}
+            borderWidth={mobile ? 2 : 3}
             colorFrom="#D448EE"
             colorTo="#19ADD7"
           />
         </div>
-        <div>
+        <div className="mt-4 md:mt-0">
           <LinkPreview
             url={`https://mockmaster-inky.vercel.app/`}
-            width={700}
-            height={400}
+            width={mobile ? 350 : 700}
+            height={mobile ? 250 : 400}
             quality={100}
             className="z-50"
           >
-            <div className="w-full relative h-80 border-y-1 border-gray-300  flex justify-between items-center transition-all   hover:px-5 hover:opacity-50">
+            <div className="w-full relative h-auto md:h-80 border-y-1 border-gray-300 flex flex-col md:flex-row justify-between items-center transition-all gap-4 md:gap-0 py-4 md:py-0 hover:px-2 md:hover:px-5 hover:opacity-50">
               <div>
-                <h1 className="text-2xl font-neue_montreal_Medium uppercase">
+                <h1 className="text-xl md:text-2xl font-neue_montreal_Medium uppercase text-center md:text-left">
                   MockMaster.AI
                 </h1>
               </div>
 
-              <div>
+              <div className="w-full md:w-auto px-4 md:px-0">
                 <Image
                   src={mockmaster}
-                  width={600}
-                  height={600}
-                  alt=""
-                  className="rounded-lg "
+                  width={mobile ? 300 : 600}
+                  height={mobile ? 300 : 600}
+                  alt="MockMaster.AI"
+                  className="rounded-lg max-w-full h-auto mx-auto"
                 />
               </div>
               <div>
-                <h1 className="text-xl opacity-70">
+                <h1 className="text-base md:text-xl opacity-70 text-center md:text-left">
                   Interaction & Development
                 </h1>
               </div>
@@ -184,7 +179,7 @@ function Projects() {
                         className="rounded-xl"
                       />
                       <div className="flex justify-between items-center py-3">
-                        <h1 className="font-neue_montreal_Medium uppercase">
+                        <h1 className="font-neue_montreal_Medium uppercase mr-5">
                           {item.project}
                         </h1>
                         <p className=" text-[.7rem] uppercase opacity-75">
@@ -214,6 +209,8 @@ function Projects() {
                     height={300}
                     quality={100}
                     className="z-50"
+                    isStatic={item.isStatic}
+                    imageSrc={item.isStatic ? item.img : undefined}
                   >
                     <div className="w-full h-32 border-y-1 flex justify-between items-center transition-all  hover:px-5 hover:opacity-50">
                       <div>
