@@ -1,17 +1,10 @@
 import {nextui} from '@nextui-org/theme';
-
 import type { Config } from "tailwindcss"
 import { fontFamily } from "tailwindcss/defaultTheme"
-/** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require("tailwindcss/defaultTheme");
- 
 const colors = require("tailwindcss/colors");
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
- 
-
+const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config = {
   darkMode: ["class"],
@@ -25,8 +18,16 @@ const config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
     
   ],
-  prefix: "",
   theme: {
+    screens: {
+      'xs': '320px',    // New breakpoint for very small devices
+      'sm2': '425px',   // New breakpoint for small mobile devices
+      'sm': '640px',    // Existing breakpoint
+      'md': '768px',    // Existing breakpoint
+      'lg': '1024px',   // Existing breakpoint
+      'xl': '1280px',   // Existing breakpoint
+      '2xl': '1400px',  // Existing breakpoint
+    },
     container: {
       center: true,
       padding: "2rem",

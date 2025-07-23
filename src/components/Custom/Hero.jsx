@@ -160,20 +160,20 @@ function Hero() {
   }, [isLargeScreen]); // Add isLargeScreen as a dependency
 
   return (
-    <div className="h-screen relative overflow-hidden">
+    <div className="xs:h-[80vh] md:h-screen relative overflow-hidden">
 
       <div className="w-[50%] md:w-[35%] md:h-56 h-40 top-20 md:top-14 bg-white absolute rounded-tr-full rounded-br-full z-10 mix-blend-difference"></div>
       <div className="w-[35%] md:h-56 h-40 bg-white absolute right-0 bottom-0 rounded-tl-full rounded-bl-full z-40 mix-blend-difference"></div>
       
 
-      <div className="text-white absolute bottom-0 lg:top-0 md:top-0 z-10 left-1/2 -translate-x-1/2 w-full md:w-auto flex justify-center">
+      <div className="text-white absolute bottom-0 z-10 left-1/2 -translate-x-1/2 w-full md:w-auto flex justify-center">
         <div className="relative mix-blend-normal px-5 md:px-10 pt-5 md:pt-10">
           <Image
             src={mypic}
             alt="Hassan Raza"
             width={400}
             height={900}
-            className="grayscale-[95%] w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] h-auto object-contain"
+            className="grayscale-[95%] w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] h-auto max-h-[70vh] lg:max-h-[100vh] object-contain"
             priority
           />
           <BorderBeam 
