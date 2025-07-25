@@ -65,7 +65,7 @@ export default function RootLayout({
         )}
       >
           <SmoothScrolling>
-          {/* <InitialLoadingScreen /> */}
+          <InitialLoadingScreen />
           <Transtionprovider>
             {children}
             </Transtionprovider>
