@@ -62,12 +62,12 @@ function About() {
           <div id="text " className="text-white">
             <div className="flex items-center gap-5 overflow-hidden">
               <Image
-                className="fot rounded-full md:h-20 md:w-20 h-16 w-16 border-2 bg-[#989D9F] grayscale-[70%]"
+                className="fot rounded-full md:h-20 md:w-20 h-16 w-16 border-2 bg-[#989D9F] grayscale-[95%]"
                 src={person[0].image}
                 alt={person[0].name}
               />
               <h1 className="fot font-neue_montreal_Medium text-4xl md:text-8xl leading-none ">
-                Let’s work
+                Let&apos;s work
               </h1>
             </div>
             <div className="overflow-hidden">
@@ -127,18 +127,24 @@ function About() {
         <hr />
       </div>
       <div className="md:px-32 py-10 flex flex-col md:flex-row gap-5">
-        <button className="btn relative overflow-hidden font-neue_montreal tracking-wider px-4 py-5 rounded-full text-white border border-gray-200 group">
+        <a 
+          href="mailto:m.hassan.raza.dev@gmail.com"
+          className="btn relative overflow-hidden font-neue_montreal tracking-wider px-4 py-5 rounded-full text-white border border-gray-200 group"
+        >
           <span className="relative z-10 group-hover:text-black transition-colors duration-300">
-            hassanwebdev0896@gmail.com
+           m.hassan.raza.dev@gmail.com
           </span>
           <span className="absolute inset-0 bg-white transform scale-y-0 origin-top group-hover:scale-y-100 transition-transform duration-300 ease-out"></span>
-        </button>
-        <button className="btn relative overflow-hidden font-neue_montreal tracking-wider px-4 py-5 rounded-full text-white border border-gray-200 group">
+        </a>
+        <a 
+          href="tel:+923265527246"
+          className="btn relative overflow-hidden font-neue_montreal tracking-wider px-4 py-5 rounded-full text-white border border-gray-200 group"
+        >
           <span className="relative z-10 group-hover:text-black transition-colors duration-300">
-            +923265527246
+            +92-3265527246
           </span>
           <span className="absolute inset-0 bg-white transform scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300 ease-out"></span>
-        </button>
+        </a>
       </div>
       <div id="social media" className="md:px-32 px-5 pt-12 ">
         <div className="flex justify-between flex-wrap ">
@@ -148,7 +154,7 @@ function About() {
                 version
               </h1>
               <h1 className="btn font-neue_montreal_Medium text-white tracking-wide">
-                2025 © Edition
+                2026 © Edition
               </h1>
             </div>
             <div className="flex flex-col gap-2">

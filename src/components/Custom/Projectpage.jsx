@@ -49,14 +49,15 @@ function Projectpage() {
       text: " Interaction & Development",
       img: Case,
     },
-    {
-      project: "Blogging Platform",
-      url: "https://bloging-site-peach.vercel.app/",
-      text: " Interaction & Development",
-      img: bloging,
-    },
   ];
   const projects = [
+    {
+      project: "VYALUX",
+      url: "https://vyalux.com/",
+      text: " Interaction & Development",
+      year: 2025,
+      location: "USA",
+    },
     {
       project: "Vyafac",
       url: "https://vyafac.com/",
@@ -64,7 +65,7 @@ function Projectpage() {
       img: Vyafac,
       isStatic: true,
       year: 2025,
-      location: "My Own",
+      location: "USA",
     },
 
     {
@@ -90,14 +91,6 @@ function Projectpage() {
       img: Case,
       year: 2023,
       location: "Germany",
-    },
-    {
-      project: "Blogging Platform",
-      url: "https://bloging-site-peach.vercel.app/",
-      text: " Interaction & Development",
-      img: bloging,
-      year: 2022,
-      location: "Canada",
     },
   ];
   useGSAP(() => {
@@ -153,10 +146,7 @@ function Projectpage() {
     <>
       <Navbar background={"bg-white text-gray-600"} />
       <div className="w-full h-auto px-5 md:px-10 ">
-        <div
-          id="mouse"
-          className={`w-5 h-5 bg-black fixed top-0  left-0 z-[99] rounded-full pointer-events-none `}
-        ></div>
+    
 
         <div className=" flex  sm:justify-center sm:pt-40 pt-20 pb-20 ">
           <h1 className="overflow-hidden font-neue_montreal text-5xl sm:text-7xl md:text-8xl">

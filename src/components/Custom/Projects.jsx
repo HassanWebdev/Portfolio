@@ -51,6 +51,13 @@ function Projects() {
   });
   const projects = [
     {
+      project: "VYALUX",
+      url: "https://vyalux.com/",
+      text: " Interaction & Development",
+      year: 2025,
+      location: "USA",
+    },
+    {
       project: "Vyafac",
       url: "https://vyafac.com/",
       text: " Interaction & Development",
@@ -74,12 +81,6 @@ function Projects() {
       url: "https://casesolver.ai/login",
       text: " Interaction & Development",
       img: Case,
-    },
-    {
-      project: "Blogging Platform",
-      url: "https://bloging-site-peach.vercel.app/",
-      text: " Interaction & Development",
-      img: bloging,
     },
   ];
   useGSAP(() => {
@@ -169,6 +170,8 @@ function Projects() {
                   <a
                     key={index}
                     href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="relative  mobilelinks bg-zinc-200  px-2 py-2 border-black  hover:border-1  rounded-xl"
                   >
                     <div>
@@ -205,6 +208,7 @@ function Projects() {
                 <div key={index} id="desklinks">
                   <LinkPreview
                     url={`${item.url}`}
+                    
                     width={400}
                     height={300}
                     quality={100}

@@ -4,10 +4,9 @@ import React, { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import img from "@/app/img/for-about.png";
-import img1 from '@/components/ui/Picsart_24-12-29_18-36-40-317.jpg'
-import img2 from '@/components/ui/hassan_raza.jpg'
+import img from "@/app/img/pro.jpg";
 import About from "./About2";
+import img2 from "@/app/img/profi.jpeg"
 import { ScrollTrigger } from 'gsap/all'
 import dynamic from "next/dynamic";
 
@@ -20,10 +19,10 @@ function Page() {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [img, img1, img2];
+  const images = [img,img2];
   const imageUrls = images.map(img => typeof img === 'object' ? img.src : img);
   
-  useEffect(() => {
+  useEffect(() => { 
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => {
         const next = (prev + 1) % images.length;
@@ -98,10 +97,7 @@ function Page() {
     <>
       <Navbar background={"bg-white text-gray-600"} />
       <div className="w-full h-auto px-5 md:px-10 ">
-        <div
-          id="mouse"
-          className={`w-5 h-5 bg-black fixed top-0  left-0 z-[99] rounded-full pointer-events-none `}
-        ></div>
+    
         <div className=" flex sm:justify-center sm:pt-40 pt-20 pb-20 ">
           <h1 className="overflow-hidden font-neue_montreal text-5xl sm:text-7xl md:text-8xl">
             <span className="title leading-tight inline-block">Helping brands thrive</span>
@@ -123,7 +119,7 @@ function Page() {
                 src={images[currentImageIndex]} 
                 width={1000} 
                 alt="Profile image" 
-                className="rounded-xl"
+                className="rounded-xl border-4 border-black object-cover"
               />
             </div>
           </div>

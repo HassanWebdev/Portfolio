@@ -17,6 +17,7 @@ interface VelocityScrollProps {
   text: string;
   default_velocity?: number;
   className?: string;
+  direction?: "left" | "right";
 }
 
 interface ParallaxProps {
@@ -29,6 +30,7 @@ export function VelocityScroll({
   text,
   default_velocity = 5,
   className,
+  direction = "left",
 }: VelocityScrollProps) {
   function ParallaxText({
     children,
@@ -102,7 +104,10 @@ export function VelocityScroll({
 
   return (
     <section className="relative w-full">
-      <ParallaxText baseVelocity={-default_velocity} className={className}>
+      <ParallaxText 
+        baseVelocity={direction === "left" ? -default_velocity : default_velocity} 
+        className={className}
+      >
         {text}
       </ParallaxText>
     </section>

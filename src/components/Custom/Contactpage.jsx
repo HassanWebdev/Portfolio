@@ -35,7 +35,6 @@ function Contactpage() {
     <>
       <Navbar background={"bg-[#1D1D21] text-white"} />
       <div className="w-full bg-[#1D1D21] text-white px-5 md:px-10">
-      <div id='mouse' className={`w-5 h-5 bg-white fixed top-0  left-0 z-[99] rounded-full pointer-events-none `}></div>
 
         <div className=" flex  sm:justify-start sm:pt-40 pt-20 pb-20 ">
           <h1 className="overflow-hidden font-neue_montreal text-5xl sm:text-7xl md:text-8xl">
