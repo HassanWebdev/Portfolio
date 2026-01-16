@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://hassanraza.dev/sitemap.xml
+Sitemap: https://www.hassan-raza.tech/sitemap.xml

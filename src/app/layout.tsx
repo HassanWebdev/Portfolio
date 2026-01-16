@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://hassanraza.dev",
+    canonical: "https://www.hassan-raza.tech",
   },
   icons: {
     icon: [
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://hassanraza.dev",
+    url: "https://www.hassan-raza.tech",
     title: "Muhammad Hassan Raza | Full Stack MERN Developer & Web Developer",
     description:
       "Muhammad Hassan Raza - Professional MERN Stack & Full Stack Developer specializing in React, Node.js, Next.js, and modern web development. 2+ years experience building scalable web applications.",
@@ -113,7 +113,7 @@ export default function RootLayout({
     "@type": "Person",
     name: "Muhammad Hassan Raza",
     alternateName: "Hassan Raza",
-    url: "https://hassanraza.dev",
+    url: "https://www.hassan-raza.tech",
     jobTitle: "Full Stack MERN Developer",
     description:
       "Professional MERN Stack & Full Stack Developer specializing in React, Node.js, Next.js, and modern web development with 2+ years of experience.",

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://hassanraza.dev/sitemap.xml',
+    sitemap: 'https://www.hassan-raza.tech/sitemap.xml',
   }
 }
