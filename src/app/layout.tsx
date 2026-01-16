@@ -108,9 +108,42 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Muhammad Hassan Raza",
+    alternateName: "Hassan Raza",
+    url: "https://hassanraza.dev",
+    jobTitle: "Full Stack MERN Developer",
+    description:
+      "Professional MERN Stack & Full Stack Developer specializing in React, Node.js, Next.js, and modern web development with 2+ years of experience.",
+    knowsAbout: [
+      "MERN Stack",
+      "React",
+      "Node.js",
+      "Next.js",
+      "JavaScript",
+      "TypeScript",
+      "MongoDB",
+      "PostgreSQL",
+      "Full Stack Development",
+      "Web Development",
+    ],
+    sameAs: [
+      "https://github.com/yourgithub",
+      "https://linkedin.com/in/yourlinkedin",
+      "https://twitter.com/hassanraza",
+    ],
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
