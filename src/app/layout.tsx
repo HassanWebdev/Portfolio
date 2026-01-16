@@ -118,7 +118,7 @@ export default function RootLayout({
         )}
       >
         <SmoothScrolling>
-          {/* <InitialLoadingScreen /> */}
+          <InitialLoadingScreen />
           <Mouse>
             <Transtionprovider>{children}</Transtionprovider>
           </Mouse>
