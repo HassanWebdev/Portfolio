@@ -109,54 +109,63 @@ const Navbar = ({ background }) => {
           </button>
           <div
             id="drawer"
-            className="w-full z-50 h-screen overflow-hidden fixed top-0 right-0 backdrop-blur-lg text-white font-neue_montreal translate-x-full"
+            className="w-full z-50 h-screen overflow-hidden fixed top-0 right-0 backdrop-blur-lg bg-black/30 text-white font-neue_montreal translate-x-full"
           >
-            <div className="text-white relative w-full h-full px-4 flex flex-col justify-center items-center gap-5 overflow-y-auto">
-            <Link
-                className="btn font-neue_montreal_Medium text-black relative overflow-hidden group  px-2 py-1 rounded-full"
-                href="/"
+            <div className="relative w-full h-full px-8 py-20 flex flex-col justify-center items-start overflow-y-auto">
+              {/* Close Button */}
+              <button 
+                onClick={drawer} 
+                className="fixed top-8 right-8 p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300"
               >
-                <span className="relative z-10 group-hover:text-black transition-colors duration-300">
-                  Home
-                </span>
-                <span className="absolute inset-0 bg-white transform scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300 ease-out"></span>
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-black transform scale-x-0 origin-right transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left"></span>
-              </Link>
-              <Link
-                className="btn font-neue_montreal_Medium text-black relative overflow-hidden group  px-2 py-1 rounded-full"
-                href="/About"
-              >
-                <span className="relative z-10 group-hover:text-black transition-colors duration-300">
-                  About
-                </span>
-                <span className="absolute inset-0 bg-white transform scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300 ease-out"></span>
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-black transform scale-x-0 origin-right transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left"></span>
-              </Link>
-              <div className="fixed left-5 top-10 rounded-full transition-all bg-red-400 hover:text-red-400 hover:bg-white hover:border-red-400 hover:border-[1px]">
-                <button onClick={drawer} className="p-4">
-                  <AiOutlineClose />
-                </button>
+                <AiOutlineClose className="text-white text-xl" />
+              </button>
+
+              {/* Navigation Links */}
+              <nav className="w-full space-y-6">
+                {[
+                  { name: "Home", url: "/" },
+                  { name: "About", url: "/About" },
+                  { name: "Projects", url: "/Projects" },
+                  { name: "Contact", url: "/Contact" },
+                ].map((item, index) => {
+                  const isActive = pathname === item.url;
+                  return (
+                    <Link
+                      key={index}
+                      href={item.url}
+                      onClick={drawer}
+                      className={`block w-full group ${isActive ? "opacity-100" : "opacity-70"}`}
+                    >
+                      <div className="flex items-center gap-4">
+                        <span className="text-sm font-neue_montreal_Medium text-white/50">
+                          0{index + 1}
+                        </span>
+                        <div className="relative flex-1">
+                          <span className={`text-4xl font-neue_montreal_Medium block transition-all duration-300 ${
+                            isActive 
+                              ? "text-white translate-x-2" 
+                              : "text-white group-hover:translate-x-4 group-hover:text-white"
+                          }`}>
+                            {item.name}
+                          </span>
+                          <span className={`absolute bottom-0 left-0 h-[2px] bg-white transition-all duration-300 ${
+                            isActive 
+                              ? "w-full" 
+                              : "w-0 group-hover:w-full"
+                          }`}></span>
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </nav>
+
+              {/* Footer Text */}
+              <div className="absolute bottom-8 left-8 right-8">
+                <p className="text-sm text-white/40 font-neue_montreal">
+                  © Code by Hassan Raza
+                </p>
               </div>
-              <Link
-                className="btn font-neue_montreal_Medium text-black relative overflow-hidden group  px-2 py-1 rounded-full"
-                href="/Projects"
-              >
-                <span className="relative z-10 group-hover:text-black transition-colors duration-300">
-                  Projects
-                </span>
-                <span className="absolute inset-0 bg-white transform scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300 ease-out"></span>
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-black transform scale-x-0 origin-right transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left"></span>
-              </Link>
-              <Link
-                className="btn font-neue_montreal_Medium text-black relative overflow-hidden group  px-2 py-1 rounded-full"
-                href="/Contact"
-              >
-                <span className="relative z-10 group-hover:text-black transition-colors duration-300">
-                  Contact
-                </span>
-                <span className="absolute inset-0 bg-white transform scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300 ease-out"></span>
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-black transform scale-x-0 origin-right transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left"></span>
-              </Link>
             </div>
           </div>
         </div>

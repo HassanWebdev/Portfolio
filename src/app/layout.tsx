@@ -64,15 +64,15 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/logoicon.png",
+        url: "/favicon.png",
         sizes: "any",
       },
       {
-        url: "/logoicon.png",
+        url: "/favicon.png",
         type: "image/svg+xml",
       },
     ],
-    apple: [{ url: "/logoicon.png" }],
+    apple: [{ url: "/favicon.png" }],
   },
   openGraph: {
     type: "website",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     siteName: "Muhammad Hassan Raza - Full Stack Developer Portfolio",
     images: [
       {
-        url: "/logoicon.png",
+        url: "/favicon.png",
         width: 1200,
         height: 630,
         alt: "Muhammad Hassan Raza - Full Stack MERN Developer",
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     title: "Muhammad Hassan Raza | Full Stack MERN Developer",
     description:
       "Professional MERN Stack & Full Stack Developer specializing in React, Node.js, Next.js. 2+ years building scalable web applications.",
-    images: ["/logoicon.png"],
+    images: ["/favicon.png"],
     creator: "@hassanraza",
   },
   verification: {
@@ -151,7 +151,7 @@ export default function RootLayout({
         )}
       >
         <SmoothScrolling>
-          <InitialLoadingScreen />
+          {/* <InitialLoadingScreen /> */}
           <Mouse>
             <Transtionprovider>{children}</Transtionprovider>
           </Mouse>

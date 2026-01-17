@@ -102,7 +102,7 @@ function Page() {
           <h1 className="overflow-hidden font-neue_montreal text-5xl sm:text-7xl md:text-8xl">
             <span className="title leading-tight inline-block">Helping brands thrive</span>
             <br />
-            <span className="title leading-none inline-block">in the digital world.</span>
+            <span className="title leading-none inline-block pb-4">in the digital world.</span>
           </h1>
         </div>
         <div className="w-full border-t-2 py-10 sm:flex justify-center ">

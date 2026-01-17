@@ -12,6 +12,8 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import Case from "@/app/img/Case.png";
 import Vyafac from "@/app/img/vyafac.png";
+import Vyalux from "@/app/img/vyalux.png";
+
 
 gsap.registerPlugin(ScrollTrigger);
 function Projects() {
@@ -56,6 +58,8 @@ function Projects() {
       text: " Interaction & Development",
       year: 2025,
       location: "USA",
+      img: Vyalux,
+      isStatic: true,
     },
     {
       project: "Vyafac",
@@ -208,7 +212,6 @@ function Projects() {
                 <div key={index} id="desklinks">
                   <LinkPreview
                     url={`${item.url}`}
-                    
                     width={400}
                     height={300}
                     quality={100}
