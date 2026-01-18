@@ -6,6 +6,7 @@ import Transtionprovider from "@/components/Custom/TransitionProvider";
 import InitialLoadingScreen from "@/components/Custom/intialscreen";
 import SmoothScrolling from "@/components/Custom/SmoothScrolling";
 import Mouse from "@/components/mouse";
+import ResumeFloat from "@/components/Resumefloat";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -151,11 +152,12 @@ export default function RootLayout({
         )}
       >
         <SmoothScrolling>
-          {/* <InitialLoadingScreen /> */}
+          <InitialLoadingScreen />
           <Mouse>
             <Transtionprovider>{children}</Transtionprovider>
           </Mouse>
         </SmoothScrolling>
+        <ResumeFloat />
       </body>
     </html>
   );
