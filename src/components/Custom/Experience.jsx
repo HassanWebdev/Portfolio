@@ -9,28 +9,42 @@ gsap.registerPlugin(ScrollTrigger);
 function Experience() {
   const experienceTimeline = [
     {
-      year: 2026,
-      role: "Full Stack Developer (Next.js, Nest.js)",
-      company: "Innovative Software Solutions",
+      year: "2025–Present",
+      role: "Full Stack SaaS Engineer",
+      company: "ISS (Servia Helpdesk)",
       achievements:
-        " Led the development of scalable web applications using Next.js and Nest.js. Implemented microservices architecture and optimized database performance, resulting in a 30% increase in application speed.",
-      technologies: ["React.js", "Next.js", "Express.js", "Nest.js", "GraphQL"],
+        "Spearheaded full-stack architecture for a centralized B2B multi-channel customer support platform using Next.js and Node.js. Engineered API integrations for Shopify, TikTok Shop, AfterShip, and Microsoft Outlook, consolidating merchant queries into a real-time dashboard.",
+      technologies: [
+        "Next.js",
+        "Node.js",
+        "Shopify APIs",
+        "Turborepo",
+        "GraphQL",
+      ],
     },
     {
-      year: 2025,
-      role: "Full Stack Developer (Next.js, Nest.js)",
-      company: "Scaylar Technologies",
+      year: "2025",
+      role: "Full Stack Engineer",
+      company: "Scaylar Technologies (Expert One)",
       achievements:
-        "Developed and deployed enterprise-level applications using modern web technologies. Built robust RESTful and GraphQL APIs with comprehensive testing coverage and CI/CD pipelines.",
-      technologies: ["React.js", "Next.js", "Express.js", "Nest.js", "GraphQL"],
+        "Architected and delivered frontend architecture for a high-traffic location-based service booking platform. Focused on optimized user interfaces with advanced search filtering and dynamic state management.",
+      technologies: ["Next.js", "React.js", "TypeScript", "State Management"],
     },
     {
-      year: 2023,
-      role: "Full Stack Developer (Next.js, Nest.js)",
-      company: "Rev9-Solution",
+      year: "2024–2025",
+      role: "MERN Stack Developer",
+      company: "Rev9-Solutions (Career Year)",
       achievements:
-        "Architected and maintained full-stack solutions with focus on scalability and performance. Collaborated with cross-functional teams to deliver high-quality software products on schedule.",
-      technologies: ["React.js", "Next.js", "Express.js", "Nest.js", "GraphQL"],
+        "Scaled a sports quiz ecosystem using Next.js (client) and NestJS (backend). Implemented real-time scoring engines, admin dashboards, and secure JWT authentication with optimized MongoDB data models.",
+      technologies: ["Next.js", "NestJS", "MongoDB", "JWT", "Realtime"],
+    },
+    {
+      year: "2023–2024",
+      role: "React Developer",
+      company: "Rev9-Solutions (VAYAFAC)",
+      achievements:
+        "Designed and built a responsive, secure React.js/Next.js UI for a mission-critical financial payment gateway. Developed strict client-side validation and integrated REST APIs with real-time transaction handling.",
+      technologies: ["React.js", "Next.js", "REST APIs", "Validation"],
     },
   ];
 
@@ -107,7 +121,7 @@ function Experience() {
                 index % 2 === 0 ? "md:order-2" : "md:order-1"
               } mt-4 md:mt-0`}
             >
-              <span className="font-neue_montreal_Bold text-3xl md:text-4xl text-gray-600">
+              <span className="font-neue_montreal_Bold text-2xl md:text-3xl text-gray-600 text-center">
                 {experience.year}
               </span>
             </div>

@@ -100,17 +100,17 @@ function Page() {
     
         <div className=" flex sm:justify-center sm:pt-40 pt-20 pb-20 ">
           <h1 className="overflow-hidden font-neue_montreal text-5xl sm:text-7xl md:text-8xl">
-            <span className="title leading-tight inline-block">Helping brands thrive</span>
+            <span className="title leading-tight inline-block">Building SaaS that</span>
             <br />
-            <span className="title leading-none inline-block pb-4">in the digital world.</span>
+            <span className="title leading-none inline-block pb-4">scales with purpose.</span>
           </h1>
         </div>
         <div className="w-full border-t-2 py-10 sm:flex justify-center ">
           <div className="w-full md:w-1/2 h-auto flex justify-center pb-5">
             <p className="spanny font-neue_montreal text-gray-600 sm:w-72 ">
-              I help companies from all over the world with tailor-made
-              solutions. With each project, I push my work to new horizons,
-              always putting quality first
+              Full Stack SaaS Engineer with 3 years shipping B2B platforms,
+              API integrations, and real-time dashboards. Currently leveling up
+              as an AWS Solutions Architect through Udemy.
             </p>
           </div>
           <div className="me w-full md:w-1/2 overflow-hidden">
@@ -132,18 +132,18 @@ function Page() {
             {[
               {
                 num: "01",
-                title: "Design",
-                para: "With a solid track record in designing websites, I deliver strong and user-friendly digital designs. (Since 2024 only in combination with development)",
+                title: "SaaS Architecture",
+                para: "I design and ship full-stack B2B products with Next.js, NestJS, and monorepo setups — dashboards, auth, and workflows that stay maintainable as you grow.",
               },
               {
                 num: "02",
-                title: "Development",
-                para: "I build scalable websites from scratch that fit seamlessly with design. My focus is on micro animations, transitions and interaction. Build with Kirby CMS or Webflow.",
+                title: "Integrations & APIs",
+                para: "From Shopify GraphQL and TikTok Shop to AfterShip and Outlook, I connect external systems into one reliable product surface with clean REST and GraphQL APIs.",
               },
               {
                 num: "03",
                 title: "The full package",
-                para: "A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.",
+                para: "Frontend, backend, and cloud thinking together. While building production SaaS, I am learning AWS Solutions Architecture to design infrastructure that scales with the product.",
               },
             ].map((data, index) => {
               return (

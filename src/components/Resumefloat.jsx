@@ -9,16 +9,15 @@ const ResumeFloat = () => {
 
   const handleDownload = () => {
     setIsDownloading(true);
-    
-    // Create a temporary anchor element to trigger download
+
     const link = document.createElement("a");
-    link.href = "/img/Hassan Resume.pdf";
+    link.href = "/img/Hassan_Raza_Resume.pdf";
     link.download = "Hassan_Raza_Resume.pdf";
+    link.rel = "noopener";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
-    // Reset downloading state after animation
     setTimeout(() => {
       setIsDownloading(false);
     }, 1500);

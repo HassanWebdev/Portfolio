@@ -50,7 +50,7 @@ export default function MeteorDemo() {
       className: "font-neue_montreal",
     },
     {
-      text: "MERN",
+      text: "Full",
       className: "text-[#D448EE] font-neue_montreal_Medium ",
     },
     {
@@ -58,7 +58,11 @@ export default function MeteorDemo() {
       className: "text-[#19ADD7] font-neue_montreal_Medium ",
     },
     {
-      text: "Developer .",
+      text: "SaaS",
+      className: "text-[#3e8e8e] font-neue_montreal_Medium",
+    },
+    {
+      text: "Engineer .",
       className: "text-[#3e8e8e] font-neue_montreal_Medium",
     },
   ];
@@ -72,12 +76,14 @@ export default function MeteorDemo() {
       </div>
       <div className="relative w-full flex flex-col md:flex-row gap-14 p-10 items-center ">
         <p id="left" className="font-neue_montreal_Medium text-3xl opacity-90">
-          Helping brands to stand out in the digital era. Together we will set
-          the new status quo. No nonsense, always on the cutting edge.
+          3 years architecting high-performance web apps and scalable APIs for
+          B2B SaaS — from multi-channel support platforms to payment and booking
+          products.
         </p>
         <p id="right" className="font-neue_montreal opacity-70">
-          The combination of my passion for design, code & interaction positions
-          me in a unique place in the web design world.
+          I integrate complex systems like Shopify, TikTok Shop, AfterShip, and
+          Outlook into real products. Currently learning AWS Solutions Architect
+          on Udemy to design cloud infrastructure that scales.
         </p>{" "}
         <BorderBeam
           size={400}

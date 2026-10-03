@@ -30,7 +30,7 @@ function About() {
     {
       id: 1,
       name: "Hassan Raza",
-      designation: "MERN Developer",
+      designation: "Full Stack SaaS Engineer",
       image: img,
     },
   ];

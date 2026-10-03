@@ -1,6 +1,11 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
-# Sitemap location
-Sitemap: https://www.hassan-raza.tech/sitemap.xml
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://portfolio-ruddy-two-44.vercel.app/sitemap.xml
+Host: https://portfolio-ruddy-two-44.vercel.app

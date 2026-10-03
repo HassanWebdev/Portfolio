@@ -52,7 +52,7 @@ function Hero() {
       {/* Top scrolling text */}
       <div className="absolute md:top-0 top-24 w-full overflow-hidden pointer-events-none">
         <VelocityScroll
-          text="MERN - Developer -"
+          text="Full Stack - SaaS Engineer -"
           default_velocity={5}
           direction="right"
           className="text-white text-[8rem]  md:text-[12rem] lg:text-[15rem] font-neue_montreal leading-none"

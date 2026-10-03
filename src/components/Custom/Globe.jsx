@@ -6,25 +6,23 @@ import gsap from "gsap";
 const slugs = [
   "typescript",
   "javascript",
-  "dart",
-  "java",
   "react",
-  "flutter",
-  "html5",
-  "css3",
+  "nextdotjs",
   "nodedotjs",
+  "nestjs",
   "express",
-  "amazonaws",
+  "graphql",
+  "mongodb",
   "postgresql",
-  "firebase",
-  "vercel",
-  "cypress",
+  "amazonaws",
+  "shopify",
   "docker",
   "git",
   "github",
-  "gitlab",
+  "vercel",
+  "html5",
+  "css3",
   "visualstudiocode",
-  "figma",
 ];
 
 export default function IconCloudDemo() {
@@ -57,44 +55,39 @@ export default function IconCloudDemo() {
   });
   const skills = [
     {
-      skill: "JavaScript",
-      description: "Proficient in writing clean and efficient JavaScript code.",
-    },
-    {
-      skill: "React",
-      description:
-        "Experienced in building dynamic user interfaces with React.",
-    },
-    {
-      skill: "Next.js",
-      description:
-        "Experienced in developing modern web applications with Next.js.",
-    },
-    {
-      skill: "Nest.js",
-      description:
-        "Experienced in developing modern web applications backedns with Nest.js framework.",
-    },
-
-    {
-      skill: "Node.js",
-      description:
-        "Skilled in developing scalable server-side applications using Node.js.",
-    },
-    {
-      skill: "Express",
-      description: "Adept at creating robust back-end APIs with Express.",
-    },
-    {
-      skill: "MongoDB",
-      description:
-        "Knowledgeable in using MongoDB for efficient database management.",
-    },
-
-    {
       skill: "TypeScript",
       description:
-        "Capable of enhancing JavaScript projects with strong typing using TypeScript.",
+        "Strong typing across frontend and backend for safer, maintainable SaaS codebases.",
+    },
+    {
+      skill: "Next.js & React",
+      description:
+        "Building high-performance product UIs, dashboards, and booking experiences.",
+    },
+    {
+      skill: "NestJS & Node.js",
+      description:
+        "Scalable APIs, auth, and service layers for B2B platforms and quiz ecosystems.",
+    },
+    {
+      skill: "GraphQL & REST",
+      description:
+        "Designing and consuming APIs, including Shopify GraphQL and partner integrations.",
+    },
+    {
+      skill: "PostgreSQL & MongoDB",
+      description:
+        "Modeling and optimizing data for transactional and document-heavy workloads.",
+    },
+    {
+      skill: "Shopify & Third-Party APIs",
+      description:
+        "Integrating Shopify, TikTok Shop, AfterShip, and Microsoft Outlook into product workflows.",
+    },
+    {
+      skill: "Solutions Architecture",
+      description:
+        "Learning AWS Solutions Architect via Udemy — scalable cloud and B2B SaaS infrastructure.",
     },
   ];
 
